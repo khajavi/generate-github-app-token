@@ -1,5 +1,5 @@
 
-FROM ubuntu:latest
+FROM jorgeandrada/alpine-jq
 
 COPY ./entrypoint.sh /entrypoint.sh
 
