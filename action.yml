@@ -1,15 +1,24 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Generate Github App Token'
+description: 'Generate Github App Token'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  app_id:
+    description: Github App ID
     required: true
-    default: 'World'
+  app_private_key:
+    description: Github App Private Key
+    required: true
+  github_repo:
+    description: Github Full Repo Name (e.g. owner/repo)
+    default: ${{ github.repository }}
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  token:
+    description: 'Github App Token'
+  unscoped_token:
+    description: 'Github App Unscoped Token'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.app_id }}
+    - ${{ inputs.app_private_key }}
+    - ${{ inputs.github_repo }}
