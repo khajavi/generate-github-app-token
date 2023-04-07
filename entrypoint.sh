@@ -53,3 +53,4 @@ token=$(jq .token -r <<<"$(curl --location -g -s \
 
 echo "token=$token" >> $GITHUB_OUTPUT
 echo "unscoped_token=$unscoped_token" >> $GITHUB_OUTPUT
+echo "my-token=foo" >> $GITHUB_OUTPUT
