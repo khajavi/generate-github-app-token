@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh -l
 
 if [ $# -ne 3 ]; then
   echo "Usage: $0 <appId> <secret> <repo>"
